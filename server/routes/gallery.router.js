@@ -7,7 +7,7 @@ const pool = require("../modules/pool");
 
 // PUT Route
 router.put('/:id', (req, res) => {
-    console.log(req.params);
+    // console.log(req.params);
     const galleryId = req.params.id;
 
     const sqlText = `
@@ -28,7 +28,7 @@ router.put('/:id', (req, res) => {
 
 // GET Route
 router.get('/', (req, res) => {
-    sqlText = `SELECT * from "image_gallery"`
+    sqlText = `SELECT * from "image_gallery" ORDER BY "id"`
     
     pool.query(sqlText)
         .then((result) => {

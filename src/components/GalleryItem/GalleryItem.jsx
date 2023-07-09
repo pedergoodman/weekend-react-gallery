@@ -96,7 +96,7 @@ export default function GalleryItem({ galleryItem, addLike }) {
 
               <IconButton onClick={handleLikeClick} >
                 <Badge 
-                  badgeContent={100} 
+                  badgeContent={galleryItem.likes} 
                   color="secondary"
                   anchorOrigin={{
                     vertical: 'top',

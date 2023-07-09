@@ -34,12 +34,12 @@ function App() {
 
       console.log('in app.jsx id is:', idToCount);
 
-      // axios.put(`/gallery/${idToCount}`)
-      // .then((response) => {
-      //   getGalleryData()
-      // }).catch((err) => {
-      //   console.log('error adding like', err);
-      // });
+      axios.put(`/gallery/${idToCount}`)
+      .then((response) => {
+        getGalleryData()
+      }).catch((err) => {
+        console.log('error adding like', err);
+      });
     }
 
     return (

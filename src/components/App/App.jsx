@@ -29,12 +29,25 @@ function App() {
 
 
 
+
+    const addLike = (idToCount) => {
+
+      console.log('in app.jsx id is:', idToCount);
+
+      axios.put(`/gallery/${idToCount}`)
+      .then((response) => {
+        getGalleryData()
+      }).catch((err) => {
+        console.log('error adding like', err);
+      });
+    }
+
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryList galleryList={galleryList} />
+        <GalleryList galleryList={galleryList} addLike={addLike}/>
       </div>
     );
 } // end APP

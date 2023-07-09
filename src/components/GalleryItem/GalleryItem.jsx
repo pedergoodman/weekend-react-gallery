@@ -1,35 +1,24 @@
 
 // basic imports
-import React from 'react';
+import React, { useState } from 'react';
 import './GalleryItem.css'
 
 
 // material UI imports
-import { styled } from '@mui/material/styles';
-import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import ImageListItemBar from '@mui/material/ImageListItemBar';
-import ListSubheader from '@mui/material/ListSubheader';
 import IconButton from '@mui/material/IconButton';
-import InfoIcon from '@mui/icons-material/Info';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import Collapse from '@mui/material/Collapse';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Badge from '@mui/material/Badge';
 import FavoriteIcon from '@mui/icons-material/Favorite';  
-import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Button, CardActionArea, CardActions } from '@mui/material';
-import { createTheme } from '@mui/material/styles';
-import { purple } from '@mui/material/colors';
-import { red } from '@mui/material/colors';
-import DeleteIcon from '@mui/icons-material/Delete';
+import { CardActions } from '@mui/material';
+import { createTheme, styled } from '@mui/material/styles';
 
 
 
 
+// color theme for buttons
 const theme = createTheme({
   palette: {
     primary: {
@@ -47,7 +36,7 @@ const theme = createTheme({
 
 
 
-
+// expand description animations
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -61,7 +50,11 @@ const ExpandMore = styled((props) => {
 
 
 
-export default function GalleryItem({ galleryItem }) {
+
+export default function GalleryItem({ galleryItem, addLike }) {
+
+
+  // const [ likeCount, setLikeCount ] = useState(0)
 
   const [expanded, setExpanded] = React.useState(false);
 
@@ -70,7 +63,12 @@ export default function GalleryItem({ galleryItem }) {
   };
 
 
+  const handleLikeClick = () => {
+    console.log('like button clicked!');
+    addLike(galleryItem.id)
+  
 
+  };
 
 
 
@@ -96,9 +94,9 @@ export default function GalleryItem({ galleryItem }) {
             </Collapse>
           <CardActions disableSpacing sx={{ paddingLeft: 2 }} className='action-bar-content'>    
 
-              <IconButton>
+              <IconButton onClick={handleLikeClick} >
                 <Badge 
-                  badgeContent={100} 
+                  badgeContent={galleryItem.likes} 
                   color="secondary"
                   anchorOrigin={{
                     vertical: 'top',

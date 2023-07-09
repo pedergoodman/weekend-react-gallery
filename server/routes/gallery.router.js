@@ -6,20 +6,29 @@ const pool = require("../modules/pool");
 // DO NOT MODIFY THIS FILE FOR BASE MODE
 
 // PUT Route
-router.put('/like/:id', (req, res) => {
-    console.log(req.params);
+router.put('/:id', (req, res) => {
+    // console.log(req.params);
     const galleryId = req.params.id;
-    for(const galleryItem of galleryItems) {
-        if(galleryItem.id == galleryId) {
-            galleryItem.likes += 1;
-        }
+
+    const sqlText = `
+        UPDATE "image_gallery"
+        SET "likes" = "likes" + 1
+        WHERE "id" = $1`
+
+    pool.query(sqlText, [galleryId])
+        .then((result) => {
+            res.sendStatus(200);
+        }).catch((err) => {
+            console.log('error getting gallery');
+        });
+
     }
-    res.sendStatus(200);
-}); // END PUT Route
+    
+); // END PUT Route
 
 // GET Route
 router.get('/', (req, res) => {
-    sqlText = `SELECT * from "image_gallery"`
+    sqlText = `SELECT * from "image_gallery" ORDER BY "id"`
     
     pool.query(sqlText)
         .then((result) => {

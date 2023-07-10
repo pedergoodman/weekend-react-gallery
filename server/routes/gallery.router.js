@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const galleryItems = require('../modules/pool');
 const pool = require("../modules/pool");
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
@@ -21,9 +20,7 @@ router.put('/:id', (req, res) => {
         }).catch((err) => {
             console.log('error getting gallery');
         });
-
     }
-    
 ); // END PUT Route
 
 // GET Route

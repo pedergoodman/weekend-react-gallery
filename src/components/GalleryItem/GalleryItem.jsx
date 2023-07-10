@@ -87,9 +87,7 @@ export default function GalleryItem({ galleryItem, addLike }) {
           <div className='image-action-bar'>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
                   <Typography className='image-description' sx={{ fontSize: 12 }}>
-                    Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
-                    aside for 10 minutes.Heat 1/2 cup of the broth in a pot until simmering, add saffron and set
-                    aside for 10 minutes.
+                    {galleryItem.description}
                   </Typography>
             </Collapse>
           <CardActions disableSpacing sx={{ paddingLeft: 2 }} className='action-bar-content'>    

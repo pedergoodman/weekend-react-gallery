@@ -13,13 +13,13 @@ CREATE TABLE "image_gallery" (
 INSERT INTO
 	"image_gallery" ("title", "description", "url")
 VALUES
-( 'TITLE', 'description text goes here!', 'public/images/co-ut-trip-01.jpg'),
-( 'TITLE', 'description text goes here!', 'public/images/co-ut-trip-02.jpg'),
-( 'TITLE', 'description text goes here!', 'public/images/co-ut-trip-03.jpg'),
-( 'TITLE', 'description text goes here!', 'public/images/co-ut-trip-04.jpg'),
-( 'TITLE', 'description text goes here!', 'public/images/co-ut-trip-05.jpg'),
-( 'TITLE', 'description text goes here!', 'public/images/co-ut-trip-06.jpg'),
-( 'TITLE', 'description text goes here!', 'public/images/co-ut-trip-07.jpg'),
-( 'TITLE', 'description text goes here!', 'public/images/co-ut-trip-08.jpg'),
-( 'TITLE', 'description text goes here!', 'public/images/co-ut-trip-09.jpg');
+( 'TITLE', 'The end of the Grandstaff Hike in Moab!', 'images/co-ut-trip-01.jpg'),
+( 'TITLE', 'Walking down the Grandstaff trail near Moab!', 'images/co-ut-trip-02.jpg'),
+( 'TITLE', 'Feel the Earth!', 'images/co-ut-trip-03.jpg'),
+( 'TITLE', 'A couple of good humans I like to travel with', 'images/co-ut-trip-04.jpg'),
+( 'TITLE', 'Cooling off in the river.', 'images/co-ut-trip-05.jpg'),
+( 'TITLE', 'Welcome to my home.', 'images/co-ut-trip-06.jpg'),
+( 'TITLE', 'Taking a long break from driving, contemplating the meaning of life', 'images/co-ut-trip-07.jpg'),
+( 'TITLE', 'Not my kitty, but tempting to bring along for the ride!', 'images/co-ut-trip-08.jpg'),
+( 'TITLE', 'A little slice of Boulder, CO', 'images/co-ut-trip-09.jpg');
 

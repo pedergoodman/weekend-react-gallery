@@ -45,7 +45,7 @@ function App() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
+          <h1 className="App-title">Utah Film Gallery</h1>
         </header>
         <GalleryList galleryList={galleryList} addLike={addLike}/>
       </div>

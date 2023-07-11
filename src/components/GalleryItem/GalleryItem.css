@@ -16,3 +16,28 @@
   padding: 5px 8px;
   padding-bottom: 12px;
 }
+
+
+.displayed-image {
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-action {
+  object-fit: cover;
+  height: 100%;
+  background-color: aquamarine;
+}
+
+.image-action button {
+  background-color: aquamarine;
+}
+
+.displayed-description {
+  color: black;
+}
+
+.image-area {
+  height: auto;
+  min-height: 600px;
+}

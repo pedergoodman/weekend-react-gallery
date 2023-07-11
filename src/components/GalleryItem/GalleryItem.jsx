@@ -14,6 +14,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { CardActions } from '@mui/material';
 import { createTheme, styled } from '@mui/material/styles';
+import {CardActionArea} from '@mui/material';
+import CardMedia from '@mui/material/CardMedia';
 
 
 
@@ -56,12 +58,17 @@ export default function GalleryItem({ galleryItem, addLike }) {
 
   // const [ likeCount, setLikeCount ] = useState(0)
 
+  const [ displayImage, setDisplayImage ] = useState(true)
+
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
+  const handleToggleDescription = () => {
+    setDisplayImage(!displayImage)
+  };
 
   const handleLikeClick = () => {
     console.log('like button clicked!');
@@ -75,14 +82,23 @@ export default function GalleryItem({ galleryItem, addLike }) {
   // return using material UI
   return (
     <>
+        
+        <ImageListItem className='image-area'>
+          <CardActionArea className='image-action' sx={{bgcolor: '#d9a058'}} onClick={handleToggleDescription}>
+            {displayImage ? 
+              <CardMedia
+              className='displayed-image'
+              component="img"
+              image={`${galleryItem.url}?w=248&fit=crop&auto=format`}
+              alt={galleryItem.title}
+              
+              /> 
+              :
+              <p className='displayed-description'>{galleryItem.description}</p>
+            }
 
-        <ImageListItem>
-          <img
-            src={`${galleryItem.url}?w=248&fit=crop&auto=format`}
-            srcSet={`${galleryItem.url}?w=248&fit=crop&auto=format`}
-            alt={galleryItem.title}
-            loading="lazy"
-          />
+
+          </CardActionArea>
           
           <div className='image-action-bar'>
             <Collapse in={expanded} timeout="auto" unmountOnExit>
